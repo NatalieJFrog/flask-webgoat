@@ -5,7 +5,7 @@ bp = Blueprint("auth", __name__)
 
 
 @bp.route("/login", methods=["POST"])
-def login():
+def login1():
     username = request.form.get("username1")
     password = request.form.get("password1")
     if username is None or password is None:
