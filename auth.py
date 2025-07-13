@@ -15,11 +15,11 @@ def login():
         )
 
     # vulnerability: SQL Injection
-    query = (
+    query1 = (
         "SELECT id, username, access_level FROM user WHERE username = '%s' AND password = '%s'"
         % (username, password)
     )
-    result = query_db(query, [], True)
+    result = query_db(query1, [], True)
     if result is None:
         return jsonify({"bad_login": True}), 400
     session["user_info"] = (result[0], result[1], result[2])
